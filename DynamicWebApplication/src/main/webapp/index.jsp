@@ -6,7 +6,7 @@
 <body>
     <h1>Welcome</h1>
     <h5>Please Register</h5>
-    <form method="post" action="RegistrationServlet">
+    <form method="post" action="Registration">
     	<input type="text" name="userName">
     	<br/>
    		<input type="text" name="userCity">
