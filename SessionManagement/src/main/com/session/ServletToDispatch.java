@@ -20,5 +20,7 @@ public class ServletToDispatch extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.println("<h1>Response from Second Servlet</h1>");
         writer.println("<h1> You name is " + name + "</h1>");
+        writer.println("<h1> You are from " + city + "</h1>");
+
     }
 }
