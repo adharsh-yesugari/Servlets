@@ -1,6 +1,5 @@
 package com.requestdispatcher;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,13 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/firstServlet")
-public class RequestDispatcherForwardInclude extends HttpServlet {
+@WebServlet("/secondServlet")
+public class Servlet2 extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("Controller in First Servlet");
         PrintWriter writer = response.getWriter();
-        writer.println("<h1> First Servlet</h1>");
-        RequestDispatcher rd = request.getRequestDispatcher("/secondServlet");
-        rd.forward(request, response);
+        writer.println("<h1> Second Servlet</h1>");
     }
+
 }
