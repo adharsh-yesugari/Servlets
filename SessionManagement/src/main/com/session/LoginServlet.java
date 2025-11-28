@@ -18,8 +18,8 @@ public class LoginServlet extends HttpServlet {
         String city = request.getParameter("userCity");
         RequestDispatcher rd = request.getRequestDispatcher("/loginServlet");
         HttpSession session = request.getSession();
-        session.setAttribute(name, "name");
-        session.setAttribute(city, "city");
+        session.setAttribute("name", name);
+        session.setAttribute("city", city);
         rd.forward(request, response);
     }
 }
