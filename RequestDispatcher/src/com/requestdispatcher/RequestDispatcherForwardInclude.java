@@ -13,16 +13,16 @@ import java.io.PrintWriter;
 
 @WebServlet("/firstServlet")
 public class RequestDispatcherForwardInclude extends HttpServlet {
-    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("Controller in First Servlet");
         String userName = request.getParameter("userName");
         String userCity = request.getParameter("userCity");
+        RequestDispatcher rd = request.getRequestDispatcher("/secondServlet");
         HttpSession session = request.getSession();
         session.setAttribute("userName", userName);
         session.setAttribute("userCity", userCity);
+        rd.forward(request, response);
         PrintWriter writer = response.getWriter();
         writer.println("<h1> First Servlet</h1>");
-        RequestDispatcher rd = request.getRequestDispatcher("/secondServlet");
-        rd.forward(request, response);
     }
 }

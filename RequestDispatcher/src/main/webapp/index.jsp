@@ -9,7 +9,7 @@
     </br>
     <input type="text" name="userCity">
     </br>
-    <input type="button" value="submit">
+    <input type="submit" value="login">
 </form>
 </body>
 </html>
